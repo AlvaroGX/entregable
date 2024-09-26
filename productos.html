@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoMarket - Productos</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            background-image: url('https://pbs.twimg.com/media/Euycd51WQAI7E7h?format=jpg&name=large');
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #000000;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            color: #000000;
+            background-color: rgba(0, 128, 0, 0.5);
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px;
+        }
+        .product {
+            background-color: rgba(255, 255, 255, 0.9);
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            width: calc(100% / 3 - 20px); 
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        #cart {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .back-btn {
+            background-color: #f44336;
+            color: white;
+            text-align: center;
+            display: block;
+            width: 150px;
+            margin: 10px auto;
+        }
+        .back-btn:hover {
+            background-color: #c62828;
+        }
+        video#backgroundVideo {
+            width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>EcoMarket - Nuestros Productos</h1>
+</header>
+
+<div class="container" id="productos">
+    <div class="product">
+        <img src="img/producto1.jpg" alt="Air Pods" width="150">
+        <h3>AirPods Ecologicos</h3>
+        <p>Precio: $10.00</p>
+        <label for="quantity1">Cantidad:</label>
+        <input type="number" id="quantity1" name="quantity1" min="1" max="10" value="1">
+        <button class="btn add-to-cart" data-product="Producto 1" data-price="10.00">Agregar al Carrito</button>
+    </div>
+    
+    <div class="product">
+        <img src="img/celular.jpg" alt="Celular Eco" width="150">
+        <h3>Celular Ecologico</h3>
+        <p>Precio: $20.00</p>
+        <label for="quantity2">Cantidad:</label>
+        <input type="number" id="quantity2" name="quantity2" min="1" max="10" value="1">
+        <button class="btn add-to-cart" data-product="Producto 2" data-price="20.00">Agregar al Carrito</button>
+    </div>
+
+    <div class="product">
+        <img src="img/Captura de pantalla 2024-09-24 235243.png" alt="Gallito de Zelica" width="150">
+        <h3>Gallo Vegano</h3>
+        <p>Precio: $30.00</p>
+        <label for="quantity3">Cantidad:</label>
+        <input type="number" id="quantity3" name="quantity3" min="1" max="10" value="1">
+        <button class="btn add-to-cart" data-product="Producto 3" data-price="30.00">Agregar al Carrito</button>
+    </div>
+
+    <div class="product">
+        <img src="img/baterias-solares.jpg" alt="Bateria-Solar" width="150">
+        <h3>Bateria Solar</h3>
+        <p>Precio: $40.00</p>
+        <label for="quantity4">Cantidad:</label>
+        <input type="number" id="quantity4" name="quantity4" min="1" max="10" value="1">
+        <button class="btn add-to-cart" data-product="Producto 4" data-price="40.00">Agregar al Carrito</button>
+    </div>
+
+    <div class="product">
+        <img src="img/walle.jpg" alt="WALL.E " width="150">
+        <h3>Robot Eco-Tec Wall.e</h3>
+        <p>Precio: $50.00</p>
+        <label for="quantity5">Cantidad:</label>
+        <input type="number" id="quantity5" name="quantity5" min="1" max="10" value="1">
+        <button class="btn add-to-cart" data-product="Producto 5" data-price="50.00">Agregar al Carrito</button>
+    </div>
+
+    <div class="product">
+        <img src="img/queso.jpeg" alt="Quesillo" width="150">
+        <h3>Queso 100% vegano</h3>
+        <p>Precio: $60.00</p>
+        <label for="quantity6">Cantidad:</label>
+        <input type="number" id="quantity6" name="quantity6" min="1" max="10" value="1">
+        <button class="btn add-to-cart" data-product="Producto 6" data-price="60.00">Agregar al Carrito</button>
+    </div>
+</div>
+
+<div id="cart">
+    <h2>Carrito de Compras</h2>
+    <ul id="cart-items"></ul>
+    <p>Total: $<span id="cart-total">0.00</span></p>
+    <button class="btn" id="clear-cart">Vaciar Carrito</button>
+    <button class="btn" id="checkout-cart">Comprar</button>
+</div>
+
+<a href="index.html" class="btn back-btn">Regresar al Inicio</a>
+
+<video id="backgroundVideo" controls>
+    <source src="video/PRODUCTOS ECOAMIGABLES.mp4" type="video/mp4">
+    Tu navegador no soporta el elemento de video.
+</video>
+
+<footer>
+    <p>EcoMarket - Productos únicos mundialmente</p>
+</footer>
+
+<script>
+    let cart = [];
+    const cartItemsElement = document.getElementById('cart-items');
+    const cartTotalElement = document.getElementById('cart-total');
+
+    function updateCart() {
+        cartItemsElement.innerHTML = '';
+        let total = 0;
+        
+        cart.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = `${item.name} - $${item.price} x ${item.quantity}`;
+            cartItemsElement.appendChild(li);
+            total += item.price * item.quantity;
+        });
+        
+        cartTotalElement.textContent = total.toFixed(2);
+    }
+
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', () => {
+            const product = button.dataset.product;
+            const price = parseFloat(button.dataset.price);
+            const quantityInput = button.previousElementSibling;
+            const quantity = parseInt(quantityInput.value);
+
+            const existingProductIndex = cart.findIndex(item => item.name === product);
+            if (existingProductIndex > -1) {
+                cart[existingProductIndex].quantity += quantity;
+            } else {
+                cart.push({ name: product, price, quantity });
+            }
+
+            updateCart();
+        });
+    });
+
+    document.getElementById('clear-cart').addEventListener('click', () => {
+        cart = [];
+        updateCart();
+    });
+
+    document.getElementById('checkout-cart').addEventListener('click', () => {
+        if (cart.length === 0) {
+            alert('El carrito está vacío. Agrega productos antes de comprar.');
+        } else {
+            alert('¡Gracias por tu compra!');
+            cart = [];  
+            updateCart();
+        }
+    });
+</script>
+
+</body>
+</html>
+

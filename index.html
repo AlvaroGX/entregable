@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoMarket - Inicio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            background-image: url('https://pbs.twimg.com/media/Euycd51WQAI7E7h?format=jpg&name=large');
+            background-size: cover;
+            background-repeat: no-repeat;
+            text-align: center;
+            color: #229b17;
+        }
+        header {
+            padding: 20px;
+        }
+        .container {
+            padding: 20px;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.4);
+            z-index: -1;
+        }
+        header h1 {
+            background-color: rgba(255, 255, 255, 0.6);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .back-btn {
+            background-color: #f44336;
+            color: white;
+            text-align: center;
+            display: block;
+            width: 150px;
+            margin: 10px auto;
+        }
+        .back-btn:hover {
+            background-color: #c62828;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #videoContainer {
+            margin-top: 20px;
+        }
+        .audio-control {
+            margin-top: 20px;
+        }
+        video {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>EcoMarket - Bienvenido</h1>
+</header>
+
+<div class="container">
+    <h2 style="background-color: rgba(255, 255, 255, 0.6); padding: 10px; border-radius: 5px;">Descubre nuestros productos</h2>
+    <button class="btn" onclick="window.location.href='productos.html'">Productos</button>
+    <button class="btn" onclick="window.location.href='contacto.html'">Contacto</button>
+    <div id="videoContainer">
+
+        <video controls>
+            <source src="video/eco.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
+    </div>
+    <div class="audio-control">
+        <audio controls autoplay loop>
+            <source src="video/P4.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+</div>
+
+<footer>
+    <p>EcoMarket - Productos únicos mundialmente</p>
+</footer>
+</body>
+</html>
